@@ -84,12 +84,14 @@ function remainingBalance() {
     if (balance < savingAmount) {
         errorHandle('save');
         savingAmountText.innerText = '!!!';
+        remainingBalance.innerText = '!!!';
         errorHandle2('save', true);
 
     }
     else if (isNaN(savingAmount)) {
         errorHandle2('save');
         errorHandle('save', true);
+        remainingBalance.innerText = '!!!';
     }
     else {
         remainingBalance.innerText = balance - savingAmount;
