@@ -13,15 +13,18 @@ function totalExpensesCalculation() {
     const totalExpense = document.getElementById('total-expense');
     if (foodCost < 0 || isNaN(foodCost)) {
         errorHandle('food', true);
+        totalExpense.innerText = '!!!';
     }
     else if (rentCost < 0 || isNaN(rentCost)) {
         errorHandle('food');
         errorHandle('rent', true);
+        totalExpense.innerText = '!!!';
 
     }
     else if (clothesCost < 0 || isNaN(clothesCost)) {
         errorHandle('rent');
         errorHandle('clothe', true);
+        totalExpense.innerText = '!!!';
 
     }
     else {
@@ -49,6 +52,9 @@ function balanceCalculation() {
         balance.innerText = '!!!';
         totalExpenseIntext.innerText = '!!!';
 
+    }
+    else if (isNaN(totalExpense)) {
+        balance.innerText = '!!!';
     }
     else {
         balance.innerText = income - totalExpense;
