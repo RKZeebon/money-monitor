@@ -74,7 +74,7 @@ function savingAmmountCalculation() {
         sevingAmount.innerText = '!!!';
     }
     else {
-        sevingAmount.innerText = income * savingPercentage / 100;
+        sevingAmount.innerText = (income * savingPercentage / 100).toFixed(2);
     }
 }
 
@@ -87,20 +87,27 @@ function remainingBalance() {
 
     const remainingBalance = document.getElementById('remaining-balance');
 
-    if (balance < savingAmount) {
-        errorHandle('save');
-        savingAmountText.innerText = '!!!';
-        remainingBalance.innerText = '!!!';
-        errorHandle2('save', true);
 
+    if (isNaN(balance)) {
+        errorHandle('save');
+        errorHandle2('save', true);
+        remainingBalance.innerText = '!!!';
+        savingAmountText.innerText = '!!!';
     }
     else if (isNaN(savingAmount)) {
         errorHandle2('save');
         errorHandle('save', true);
         remainingBalance.innerText = '!!!';
     }
+    else if (balance < savingAmount) {
+        errorHandle('save');
+        savingAmountText.innerText = '!!!';
+        remainingBalance.innerText = '!!!';
+        errorHandle2('save', true);
+
+    }
     else {
-        remainingBalance.innerText = balance - savingAmount;
+        remainingBalance.innerText = (balance - savingAmount).toFixed(2);
         errorHandle2('save');
         errorHandle('save');
     }
