@@ -40,10 +40,14 @@ function balanceCalculation() {
     if (income < 0 || isNaN(income)) {
         errorHandle2('income');
         errorHandle('income', true);
+        totalExpenseIntext.innerText = '!!!';
+        balance.innerText = '!!!';
     }
     else if (income < totalExpense) {
         errorHandle('income');
         errorHandle2('income', true);
+        balance.innerText = '!!!';
+        totalExpenseIntext.innerText = '!!!';
 
     }
     else {
@@ -69,16 +73,19 @@ function savingAmmountCalculation() {
 }
 
 function remainingBalance() {
-    const balanceText = document.getElementById('balance').innerText;
-    const balance = parseFloat(balanceText);
+    const balanceText = document.getElementById('balance');
+    const balance = parseFloat(balanceText.innerText);
 
-    const savingAmountText = document.getElementById('saving').innerText;
-    const savingAmount = parseFloat(savingAmountText);
+    const savingAmountText = document.getElementById('saving');
+    const savingAmount = parseFloat(savingAmountText.innerText);
 
     const remainingBalance = document.getElementById('remaining-balance');
 
     if (balance < savingAmount) {
+        errorHandle('save');
+        savingAmountText.innerText = '!!!';
         errorHandle2('save', true);
+
     }
     else if (isNaN(savingAmount)) {
         errorHandle2('save');
