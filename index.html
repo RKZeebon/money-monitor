@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+    <title>Money Monitor</title>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl font-black flex my-6 justify-center text-orange-500"
+            style="font-family: 'Titillium Web', sans-serif;"> <img class="w-12 mr-2" src="./Images/budget.png" alt="">
+            Money Monitor <img class="w-12 ml-2" src="./Images/budget.png" alt="">
+        </h1>
+
+    </header>
+
+    <main>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-orange-200 rounded-md">
+            <div class="py-2 px-5"><img class="rounded" src="./Images/image-1.jpg" alt=""></div>
+            <div>
+                <div class="rounded my-2 mx-5 py-6 bg-orange-300">
+                    <h3 class="text-center text-xl font-semibold">Income</h3>
+                    <div class="grid grid-cols-2 mt-2">
+                        <h4 class="text-right mr-2 font-semibold text-lg">Income:</h4>
+                        <input id="income" class="w-5/12 pl-2" type="text" placeholder="0">
+                    </div>
+                    <p id="income-error-messege" class="text-center text-lg font-semibold"
+                        style="color: red; display: none;">Please enter the
+                        value in positive
+                        number.</p>
+                    <h3 class="text-center mt-2 text-xl font-semibold">Expenses</h3>
+                    <div class="grid grid-cols-2 mt-2">
+                        <h4 class="text-right mr-2 font-semibold text-lg">Food:</h4>
+                        <input id="food" class="w-5/12 pl-2" type="text" placeholder="0">
+                    </div>
+                    <p id="food-error-messege" class=" text-center text-lg font-semibold"
+                        style="color: red; display: none;">Please enter the
+                        value in positive number.</p>
+                    <div class="grid grid-cols-2 mt-2">
+                        <h4 class="text-right mr-2 font-semibold text-lg">Rent:</h4>
+                        <input id="rent" class="w-5/12 pl-2" type="text" placeholder="0">
+                    </div>
+                    <p id="rent-error-messege" class=" text-center text-lg font-semibold"
+                        style="color: red; display: none;">Please enter the
+                        value in positive number.</p>
+                    <div class="grid grid-cols-2 mt-2">
+                        <h4 class="text-right mr-2 font-semibold text-lg">Clothes:</h4>
+                        <input id="clothe" class="w-5/12 pl-2" type="text" placeholder="0">
+                    </div>
+                    <p id="clothe-error-messege" class=" text-center text-lg font-semibold"
+                        style="color: red; display: none;">Please enter
+                        the value in positive number.</p>
+                    <p id="income2-error-messege" class=" text-center text-lg font-semibold"
+                        style="color: red; display: none;">You can't expense
+                        more than your INCOME!</p>
+                    <div class="text-center mt-5"><button id="calculate"
+                            class="px-10 py-2 bg-orange-600 text-white rounded-xl font-semibold text-lg">Calculate</button>
+                    </div>
+                    <h2 class="text-center text-2xl font-semibold">Total Expenses: <span id="total-expense">000</span>
+                    </h2>
+                    <h2 class="text-center text-2xl font-semibold">Balance: <span id="balance">000</span></h2>
+                    <h4 class="text-center mt-8 font-semibold text-lg">Save: <input id="save" class="w-1/12 mr-2 pl-2"
+                            type="text" placeholder="0"> %<button id="saving-btn"
+                            class="ml-2 px-10 py-2 bg-orange-600 text-white rounded-xl font-semibold text-lg">Save</button>
+                    </h4>
+                    <p id="save-error-messege" class=" text-center text-lg font-semibold"
+                        style="color: red; display: none;">Please enter the
+                        value in positive number.</p>
+                    <p id="save2-error-messege" class="text-center text-lg font-semibold"
+                        style="color: red; display: none;">You can't save more than your BALANCE!!</p>
+                    <h2 class="text-center mt-2 text-2xl font-semibold">Saving Amount: <span id="saving">000</span></h2>
+                    <h2 class="text-center text-2xl font-semibold">Remaining Balance: <span
+                            id="remaining-balance">000</span></h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
